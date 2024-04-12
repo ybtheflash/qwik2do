@@ -6,6 +6,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import LockIcon from "@mui/icons-material/Lock";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import { IconButton, Modal, Box, Typography } from "@mui/material";
 
 export default function Home() {
@@ -78,7 +79,7 @@ export default function Home() {
             </p>
             <Link
               href="/signup"
-              className="inline-block bg-black hover:bg-white text-white hover:text-black font-bold py-2 px-4 rounded"
+              className="inline-block bg-white hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded"
             >
               Sign Up
             </Link>
@@ -88,7 +89,7 @@ export default function Home() {
             <p className="mb-4">Sign in and manage your tasks.</p>
             <Link
               href="/signin"
-              className="inline-block bg-black hover:bg-white text-white hover:text-black font-bold py-2 px-4 rounded"
+              className="inline-block bg-white hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded"
             >
               Sign In
             </Link>
@@ -180,9 +181,14 @@ export default function Home() {
       <footer className="text-center mt-4 text-xs">
         <Typography variant="body2">
           Made with{" "}
-          <span role="img" aria-label="love">
-            ❤️
-          </span>{" "}
+          <FavoriteTwoToneIcon
+            sx={{
+              color: "white",
+              width: "20px",
+              height: "20px",
+              paddingBottom: "2px",
+            }}
+          />{" "}
           by{" "}
           <Link
             href="https://github.com/ybtheflash"

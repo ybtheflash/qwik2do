@@ -83,7 +83,7 @@ export default function SignIn() {
           alt="Background"
         />
       </div>
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
+      <div className="bg-gray-800 p-4 sm:p-8 rounded-lg shadow-lg max-w-md w-full mx-4 sm:mx-0">
         <h1 className="text-2xl font-bold text-center text-white mb-8">
           Sign In to Qwik2Do
         </h1>
