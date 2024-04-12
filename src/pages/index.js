@@ -32,7 +32,10 @@ export default function Home() {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: "90%",
+    maxWidth: 600, // Set a max width to prevent the modal from becoming too wide
+    maxHeight: "80vh", // Set a max height to make the modal scrollable
+    overflowY: "auto", // Enable vertical scrolling
     bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
@@ -117,7 +120,59 @@ export default function Home() {
               Privacy Policy
             </Typography>
             <Typography sx={{ mt: 2 }}>
-              Your privacy is important to us.
+              Last updated: 13 April, 2024.
+              <br />
+              <br />
+              Information We Collect:
+              <br />
+              We collect and use the personal information you provide to us,
+              such as your email address and Google account data, to operate and
+              improve our website. We do not share your information with anyone
+              except as described in this Privacy Policy.
+              <br />
+              <br />
+              How We Use Your Information:
+              <br />
+              We use your information to provide and improve our website,
+              communicate with you, and develop new products and services. We do
+              not sell your personal information.
+              <br />
+              <br />
+              Log Files:
+              <br />
+              We use log files to analyze website usage, but they do not contain
+              personally identifiable information.
+              <br />
+              <br />
+              Cookies and Web Beacons:
+              <br />
+              We use cookies to personalize content and improve your experience
+              on our website.
+              <br />
+              <br />
+              Third-Party Privacy Policies:
+              <br />
+              Our Privacy Policy does not apply to other websites. Please
+              consult their Privacy Policies for more information.
+              <br />
+              <br />
+              Your Privacy Rights:
+              <br />
+              Under the CCPA and GDPR, you have the right to access, correct, or
+              delete your personal data. Please contact us to exercise these
+              rights.
+              <br />
+              <br />
+              Children&apos;s Information:
+              <br />
+              We do not knowingly collect personal information from children
+              under 13. If you believe your child has provided us with personal
+              information, please contact us to remove it.
+              <br />
+              <br />
+              Consent:
+              <br />
+              By using our website, you consent to our Privacy Policy.
             </Typography>
           </Box>
         </Modal>
