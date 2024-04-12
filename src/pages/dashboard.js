@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Lottie from "react-lottie";
+import animationData from "../../public/animations/loading.json";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
@@ -22,6 +24,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import LogoutIcon from "@mui/icons-material/Logout";
+import HomeIcon from "@mui/icons-material/Home";
 import { motion } from "framer-motion";
 
 export default function Dashboard() {
@@ -97,10 +100,19 @@ export default function Dashboard() {
       });
   };
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        Loading...
+        <Lottie options={defaultOptions} height={400} width={400} />
       </div>
     );
   }
@@ -136,9 +148,14 @@ export default function Dashboard() {
               <Typography variant="h5" component="h2" className="text-black">
                 Your To-Dos
               </Typography>
-              <IconButton onClick={handleSignOut} color="inherit">
-                <LogoutIcon />
-              </IconButton>
+              <div>
+                <IconButton onClick={() => router.push("/")} color="inherit">
+                  <HomeIcon />
+                </IconButton>
+                <IconButton onClick={handleSignOut} color="inherit">
+                  <LogoutIcon />
+                </IconButton>
+              </div>
             </div>
             <List>
               {todos.map((todo) => (

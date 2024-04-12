@@ -79,7 +79,7 @@ export default function SignUp() {
 
   return (
     <motion.div
-      className="relative min-h-screen flex items-center justify-center"
+      className="relative min-h-screen flex items-center justify-center bg-black"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -98,15 +98,15 @@ export default function SignUp() {
         />
       </div>
 
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
+      <div className="bg-black/60 p-4 sm:p-8 rounded-lg shadow-lg max-w-md w-full mx-4 sm:mx-0 backdrop-blur-lg border border-gray-700">
         <h1 className="text-2xl font-bold text-center text-white mb-8">
-          Sign Up for Qwik2Do
+          Sign Up | Qwik2Do
         </h1>
         <form onSubmit={handleSignUp} className="space-y-6">
           <div>
             <label
               htmlFor="email"
-              className="text-sm font-medium text-gray-300"
+              className="text-sm font-medium text-gray-200"
             >
               Email Address
             </label>
@@ -116,13 +116,13 @@ export default function SignUp() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full p-2 rounded-md bg-gray-700 text-white mt-1"
+              className="w-full p-2 rounded-md bg-black/50 text-white mt-1 border border-gray-600 placeholder-gray-400"
             />
           </div>
           <div>
             <label
               htmlFor="password"
-              className="text-sm font-medium text-gray-300"
+              className="text-sm font-medium text-gray-200"
             >
               Password
             </label>
@@ -132,13 +132,13 @@ export default function SignUp() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full p-2 rounded-md bg-gray-700 text-white mt-1"
+              className="w-full p-2 rounded-md bg-black/50 text-white mt-1 border border-gray-600 placeholder-gray-400"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full p-3 rounded-md bg-green-500 text-white font-medium hover:bg-green-600 disabled:bg-green-400"
+            className="w-full p-3 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 disabled:bg-green-400"
           >
             {loading ? "Signing Up..." : "Sign Up"}
           </button>

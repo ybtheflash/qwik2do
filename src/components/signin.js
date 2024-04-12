@@ -83,9 +83,9 @@ export default function SignIn() {
           alt="Background"
         />
       </div>
-      <div className="bg-gray-800 p-4 sm:p-8 rounded-lg shadow-lg max-w-md w-full mx-4 sm:mx-0">
+      <div className="bg-black/60 p-4 sm:p-8 rounded-lg shadow-lg max-w-md w-full mx-4 sm:mx-0 backdrop-blur-lg border border-gray-700">
         <h1 className="text-2xl font-bold text-center text-white mb-8">
-          Sign In to Qwik2Do
+          Sign In | Qwik2Do
         </h1>
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
@@ -96,7 +96,7 @@ export default function SignIn() {
           <div>
             <label
               htmlFor="email"
-              className="text-sm font-medium text-gray-300"
+              className="text-sm font-medium text-gray-200"
             >
               Email Address
             </label>
@@ -106,13 +106,13 @@ export default function SignIn() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full p-2 rounded-md bg-gray-700 text-white mt-1"
+              className="w-full p-2 rounded-md bg-black/50 text-white mt-1 border border-gray-600 placeholder-gray-400"
             />
           </div>
           <div>
             <label
               htmlFor="password"
-              className="text-sm font-medium text-gray-300"
+              className="text-sm font-medium text-gray-200"
             >
               Password
             </label>
@@ -122,7 +122,7 @@ export default function SignIn() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full p-2 rounded-md bg-gray-700 text-white mt-1"
+              className="w-full p-2 rounded-md bg-black/50 text-white mt-1 border border-gray-600 placeholder-gray-400"
             />
           </div>
           <button
