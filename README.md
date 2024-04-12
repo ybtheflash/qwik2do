@@ -80,9 +80,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter)
+Your Name - [@ybtheflash](https://ybtheflash.in)
+ybtheflash on all socials.
 
-Project Link: [https://github.com/your_username_/Qwik2Do](https://github.com/your_username_/Qwik2Do)
+Project Link: [https://github.com/ybtheflash/Qwik2Do](https://github.com/ybtheflash/Qwik2Do)
 
 ## Acknowledgements
 
