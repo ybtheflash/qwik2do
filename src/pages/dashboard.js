@@ -191,7 +191,6 @@ export default function Dashboard() {
                 </IconButton>
               </div>
             </div>
-            {/* Wrap List in a div with overflow-y: auto */}
             <div style={{ maxHeight: "400px", overflowY: "auto" }}>
               <List>
                 {todos.map((todo) => (

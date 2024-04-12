@@ -9,7 +9,6 @@ export default async function handler(req, res) {
     );
     const hits = response.data.hits;
 
-    // Randomize the position of the hits array
     hits.sort(() => Math.random() - 0.5);
 
     const imageData = hits[0];
