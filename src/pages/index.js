@@ -4,6 +4,8 @@ import { fetchBackgroundImage } from "../lib/api";
 import Head from "next/head";
 import InfoIcon from "@mui/icons-material/Info";
 import LockIcon from "@mui/icons-material/Lock";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { IconButton, Modal, Box, Typography } from "@mui/material";
 
 export default function Home() {
@@ -96,7 +98,15 @@ export default function Home() {
             </Typography>
             <Typography sx={{ mt: 2 }}>
               Qwik2Do is an app designed to help you manage your tasks
-              efficiently and stay organized.
+              efficiently and stay organized. Created by{" "}
+              <Link
+                href="https://github.com/ybtheflash"
+                target="_blank"
+                rel="noopener"
+              >
+                Yubaraj Biswas
+              </Link>
+              .
             </Typography>
           </Box>
         </Modal>
@@ -112,6 +122,44 @@ export default function Home() {
           </Box>
         </Modal>
       </div>
+      <footer className="text-center mt-4 text-xs">
+        <Typography variant="body2">
+          Made with{" "}
+          <span role="img" aria-label="love">
+            ❤️
+          </span>{" "}
+          by{" "}
+          <Link
+            href="https://github.com/ybtheflash"
+            target="_blank"
+            rel="noopener"
+            className="underline"
+          >
+            Yubaraj Biswas
+          </Link>{" "}
+          &copy; {new Date().getFullYear()} All rights reserved
+        </Typography>
+        <IconButton
+          component={Link}
+          href="https://github.com/ybtheflash"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          sx={{ color: "white" }}
+        >
+          <GitHubIcon sx={{ color: "white" }} />
+        </IconButton>
+        <IconButton
+          component={Link}
+          href="https://www.instagram.com/ybtheflash/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          sx={{ color: "white" }}
+        >
+          <InstagramIcon sx={{ color: "white" }} />
+        </IconButton>
+      </footer>
     </div>
   );
 }
