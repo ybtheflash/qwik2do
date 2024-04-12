@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await axios.get(
-      `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=landscape&orientation=horizontal&image_type=photo`
+      `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=gradient&orientation=horizontal&image_type=photo`
     );
     const hits = response.data.hits;
 
