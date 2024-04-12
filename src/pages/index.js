@@ -34,9 +34,9 @@ export default function Home() {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "90%",
-    maxWidth: 600, // Set a max width to prevent the modal from becoming too wide
-    maxHeight: "80vh", // Set a max height to make the modal scrollable
-    overflowY: "auto", // Enable vertical scrolling
+    maxWidth: 600,
+    maxHeight: "80vh",
+    overflowY: "auto",
     bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,

@@ -154,15 +154,6 @@ export default function Dashboard() {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${backgroundImage})`,
         }}
       ></div>
-      {/* <div
-        className="absolute top-8 left-1/2 transform -translate-x-1/2 z-50 bg-black/50 p-4 rounded-full"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <Typography variant="body1" style={{ fontSize: "0.8rem" }}>
-          Session: {userEmail}
-        </Typography>
-      </div> */}
 
       <div
         className={`absolute top-8 left-1/2 transform -translate-x-1/2 z-50 bg-black/50 p-4 rounded-full ${
