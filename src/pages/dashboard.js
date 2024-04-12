@@ -25,6 +25,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import LogoutIcon from "@mui/icons-material/Logout";
 import HomeIcon from "@mui/icons-material/Home";
+import PersonIcon from "@mui/icons-material/Person";
 import { motion } from "framer-motion";
 
 export default function Dashboard() {
@@ -34,8 +35,10 @@ export default function Dashboard() {
   const [weather, setWeather] = useState(null);
   const [currentTime, setCurrentTime] = useState("");
   const [loading, setLoading] = useState(true);
+  const [userEmail, setUserEmail] = useState("");
   const router = useRouter();
   const auth = getAuth();
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const fetchBackground = async () => {
@@ -52,6 +55,7 @@ export default function Dashboard() {
           fetchWeather(locationData.latitude, locationData.longitude);
         }
         updateCurrentTime();
+        setUserEmail(user.email);
       } else {
         router.push("/signin");
       }
@@ -129,6 +133,15 @@ export default function Dashboard() {
     month: "long",
     day: "numeric",
   });
+
+  const handleMouseEnter = () => {
+    setExpanded(true);
+  };
+
+  const handleMouseLeave = () => {
+    setExpanded(false);
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white relative p-4">
       <Head>
@@ -141,6 +154,36 @@ export default function Dashboard() {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${backgroundImage})`,
         }}
       ></div>
+      {/* <div
+        className="absolute top-8 left-1/2 transform -translate-x-1/2 z-50 bg-black/50 p-4 rounded-full"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <Typography variant="body1" style={{ fontSize: "0.8rem" }}>
+          Session: {userEmail}
+        </Typography>
+      </div> */}
+
+      <div
+        className={`absolute top-8 left-1/2 transform -translate-x-1/2 z-50 bg-black/50 p-4 rounded-full ${
+          expanded ? "w-44" : "w-14"
+        } flex items-center justify-center`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {expanded ? (
+          <Typography
+            variant="body1"
+            style={{ fontSize: "0.8rem" }}
+            className="flex items-center"
+          >
+            {userEmail}
+          </Typography>
+        ) : (
+          <PersonIcon />
+        )}
+      </div>
+
       <Card className="z-10 w-full max-w-xl my-8 bg-black/30 backdrop-blur-lg shadow-lg rounded-lg p-4">
         <CardContent>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -157,29 +200,32 @@ export default function Dashboard() {
                 </IconButton>
               </div>
             </div>
-            <List>
-              {todos.map((todo) => (
-                <ListItem
-                  key={todo.id}
-                  secondaryAction={
-                    <IconButton
-                      edge="end"
-                      aria-label="delete"
-                      onClick={() => handleDeleteTodo(todo.id)}
-                    >
-                      <DeleteIcon />
-                    </IconButton>
-                  }
-                >
-                  <ListItemText
-                    primary={todo.text}
-                    secondary={`Added at: ${new Date(
-                      todo.createdAt.seconds * 1000
-                    ).toLocaleTimeString()}`}
-                  />
-                </ListItem>
-              ))}
-            </List>
+            {/* Wrap List in a div with overflow-y: auto */}
+            <div style={{ maxHeight: "400px", overflowY: "auto" }}>
+              <List>
+                {todos.map((todo) => (
+                  <ListItem
+                    key={todo.id}
+                    secondaryAction={
+                      <IconButton
+                        edge="end"
+                        aria-label="delete"
+                        onClick={() => handleDeleteTodo(todo.id)}
+                      >
+                        <DeleteIcon />
+                      </IconButton>
+                    }
+                  >
+                    <ListItemText
+                      primary={todo.text}
+                      secondary={`Added at: ${new Date(
+                        todo.createdAt.seconds * 1000
+                      ).toLocaleTimeString()}`}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            </div>
             <div className="flex gap-4 items-center mb-4">
               <TextField
                 label="New To-Do"

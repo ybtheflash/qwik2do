@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { Alert, Snackbar } from "@mui/material";
 
@@ -20,6 +21,16 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const auth = getAuth();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        router.push("/dashboard");
+      }
+    });
+
+    return () => unsubscribe();
+  }, [auth, router]);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -159,7 +170,7 @@ export default function SignIn() {
             Sign Up
           </Link>
           &nbsp;|{" "}
-          <Link href="/" className="text-yellow-500 hover:text-blue-600">
+          <Link href="/" className="text-yellow-500 hover:text-yellow-300">
             Go Home
           </Link>
         </p>

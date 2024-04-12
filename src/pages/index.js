@@ -194,11 +194,10 @@ export default function Home() {
             href="https://github.com/ybtheflash"
             target="_blank"
             rel="noopener"
-            className="underline"
           >
             Yubaraj Biswas
           </Link>{" "}
-          &copy; {new Date().getFullYear()} All rights reserved
+          &copy; {new Date().getFullYear()} | All rights reserved
         </Typography>
         <IconButton
           component={Link}
