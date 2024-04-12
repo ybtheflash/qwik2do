@@ -84,7 +84,7 @@ Your Name - [@ybtheflash](https://ybtheflash.in)
 ybtheflash on all socials.
 
 Project Link: [https://github.com/ybtheflash/Qwik2Do](https://github.com/ybtheflash/Qwik2Do)
-
+Hosted On Vercel: [https://qwik2do.vercel.app/](https://qwik2do.vercel.app/)
 ## Acknowledgements
 
 - [Next.js](https://nextjs.org/)
