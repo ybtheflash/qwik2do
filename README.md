@@ -14,8 +14,58 @@ It's a very simple app.
 - **Modern UI**: A polished interface with smooth animations, powered by Material-UI and Framer Motion.
 - **Dynamic Backgrounds**: Beautiful scenery backgrounds provided by the Pexels API.
 
+# Qwik2Do
+
+Qwik2Do is a modern, responsive web application designed to streamline task management and boost productivity. Built with Next.js and Firebase, it offers real-time synchronization, user authentication, and personalized weather updates, all wrapped in a sleek user interface.
+
+It's a very simple app.
+
+## Features
+
+- **User Authentication**: Securely sign up and sign in with email/password or Google Sign-In.
+- **Task Management**: Add, update, and delete tasks with ease.
+- **Real-Time Synchronization**: Changes are updated across all devices in real-time.
+- **Weather Updates**: Get personalized weather information based on your location.
+- **Responsive Design**: Enjoy a consistent experience across all your devices.
+- **Modern UI**: A polished interface with smooth animations, powered by Material-UI and Framer Motion.
+- **Dynamic Backgrounds**: Beautiful scenery backgrounds provided by the Pexels API.
+
 ## Getting Started
 
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- npm or yarn
+  ```sh
+  npm install npm@latest -g
+  # or
+  yarn
+  ```
+
+### Installation
+
+1. Clone the repository
+   ```sh
+   git clone https://github.com/your_username_/Qwik2Do.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+3. Create a `.env.local` file in the root directory and enter your API keys:
+   ```env
+   NEXT_PUBLIC_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
+   # ... other Firebase configurations
+   PEXELS_API_KEY=YOUR_PEXELS_API_KEY
+   ACCUWEATHER_API_KEY=YOUR_ACCUWEATHER_API_KEY
+   ```
+
+## Usage
+
+After installation, run the development server:
 To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
