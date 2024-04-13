@@ -129,8 +129,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@ybtheflash](https://ybtheflash.in)
-ybtheflash on all socials.
+Your Name - ybtheflash on all socials.
 
 Project Link: [https://github.com/ybtheflash/Qwik2Do](https://github.com/ybtheflash/Qwik2Do)
 
